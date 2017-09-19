@@ -4,7 +4,8 @@
   "description": "Randomly selects one of Robin's 368 Holy 'blank' Batman exclaimations from the Batman television show",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+      "start" : "node server.js"
   },
   "author": "",
   "license": "ISC",
