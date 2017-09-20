@@ -374,12 +374,12 @@ var holyblanks = [
     "Holy Zorro"
 ];
 
-var rand = Math.floor(Math.random() * holyblanks.length) + 1;
-
-console.log(holyblanks[rand] + ", Batman!");
-
 app.post("/holyblank",function(req,res){
-    res.json(holyblanks[rand] + ", Batman!");
+    res.json(holyblanks[chooseBlank()] + ", Batman!");
 });
+
+var chooseBlank = function(){
+    return Math.floor(Math.random() * holyblanks.length) + 1;
+}
 
 app.listen(port);
