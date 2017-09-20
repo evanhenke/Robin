@@ -1,8 +1,15 @@
 "use strict";
 var express = require("express");
+var bodyParser = require("body-parser");
 var app = express();
-var port = 3030;
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
+
+var port = 3030;
+var token = "4nO1R34Ux4L2h1i9ge2xU4Kf";
+
+//Content-Type: application/x-www-form-urlencoded
 var holyblanks = [
     "Holy Agility",
     "Holy Almost",
@@ -374,21 +381,29 @@ var holyblanks = [
     "Holy Zorro"
 ];
 
-app.post("/holyblank",function(req,res){
-    res.json({
-        "response_type" : "in_channel",
-        "text" : holyblanks[chooseBlank()] + ", Batman!"
-    });
-});
+app.listen(process.env.PORT || port);
 
-app.post("/holyblank/:name",function(req,res){
-    res.json({
-        "response_type":"in_channel",
-        "text": holyblanks[chooseBlank()] + ", " + req.params.name + "!"});
+app.post("/holyblank",function(req,res){
+    var name = "";
+    console.log(req.body);
+    if(req.body.text!==""){
+        name = req.body.text;
+    } else {
+        name = "Batman";
+    }
+    if (req.body.token!==token){
+        res.json({
+            "error":"invalid token",
+            "tokenGiven":req.body.token
+        });
+    } else {
+        res.json({
+            "response_type":"in_channel",
+            "text": holyblanks[chooseBlank()] + ", " + name + "!"
+        });
+    }
 });
 
 var chooseBlank = function(){
     return Math.floor(Math.random() * holyblanks.length) + 1;
 }
-
-app.listen(process.env.PORT || port);
