@@ -378,6 +378,10 @@ app.post("/holyblank",function(req,res){
     res.json(holyblanks[chooseBlank()] + ", Batman!");
 });
 
+app.post("/holyblank/:name",function(req,res){
+    res.json(holyblanks[chooseBlank()] + ", " + req.params.name + "!");
+});
+
 var chooseBlank = function(){
     return Math.floor(Math.random() * holyblanks.length) + 1;
 }
