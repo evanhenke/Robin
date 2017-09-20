@@ -375,11 +375,16 @@ var holyblanks = [
 ];
 
 app.post("/holyblank",function(req,res){
-    res.json(holyblanks[chooseBlank()] + ", Batman!");
+    res.json({
+        "response_type" : "in_channel",
+        "text" : holyblanks[chooseBlank()] + ", Batman!"
+    });
 });
 
 app.post("/holyblank/:name",function(req,res){
-    res.json(holyblanks[chooseBlank()] + ", " + req.params.name + "!");
+    res.json({
+        "response_type":"in_channel",
+        "text": holyblanks[chooseBlank()] + ", " + req.params.name + "!"});
 });
 
 var chooseBlank = function(){
