@@ -6,8 +6,11 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 
+
 var port = 3030;
-var token = "4nO1R34Ux4L2h1i9ge2xU4Kf";
+//var token = "4nO1R34Ux4L2h1i9ge2xU4Kf";
+var token = "LCqVPN3DKWUsU4phhrwCdjhF";
+var oAuthToken = "xoxp-243600448048-245138256854-243604401616-f56512b3fabd56508772f0a4d1a7fbec";
 
 //Content-Type: application/x-www-form-urlencoded
 var holyblanks = [
@@ -170,7 +173,7 @@ var holyblanks = [
     "Holy Homework",
     "Holy Homicide",
     "Holy Hoodwink",
-    "Holy Hoof Beats",
+    "Holy Hoof Beats",-
     "Holy Hors D'Oeuvre",
     "Holy Horseshoes",
     "Holy Hostage",
