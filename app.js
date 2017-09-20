@@ -382,4 +382,4 @@ var chooseBlank = function(){
     return Math.floor(Math.random() * holyblanks.length) + 1;
 }
 
-app.listen(port);
+app.listen(process.env.PORT || port);
