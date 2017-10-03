@@ -1,5 +1,5 @@
-var getSayings = function(){
-    return [
+{
+    "options" : [
             "Holy Agility",
             "Holy Almost",
             "Holy Alphabet",
@@ -159,7 +159,7 @@ var getSayings = function(){
             "Holy Homework",
             "Holy Homicide",
             "Holy Hoodwink",
-            "Holy Hoof Beats",-
+            "Holy Hoof Beats",
             "Holy Hors D'Oeuvre",
             "Holy Horseshoes",
             "Holy Hostage",
@@ -368,9 +368,5 @@ var getSayings = function(){
             "Holy Whiskers",
             "Holy Wigs",
             "Holy Zorro"
-        ];
-};
-
-module.exports = {
-    getSayings:getSayings
-};
+        ]
+}
